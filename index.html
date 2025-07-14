@@ -133,30 +133,68 @@
   </div>
 
   <script>
-    function marcarRamo(elemento) {
-      // Marcar el ramo como completado visualmente
-      elemento.classList.add('completado');
-      elemento.classList.remove('deshabilitado');
-      elemento.onclick = null; // desactiva el clic
+  const claveAlmacenamiento = 'ramosCompletados';
 
-      // Revisa si desbloquea otros ramos
-      const ramosBloqueados = document.querySelectorAll('.ramo.deshabilitado');
-      ramosBloqueados.forEach(ramo => {
-        const requisitos = ramo.getAttribute('data-prerrequisitos');
-        if (!requisitos) return;
+  // Función que marca un ramo como completado
+  function marcarRamo(elemento) {
+    const id = elemento.id;
+    if (!id) return;
 
-        const lista = requisitos.split(',');
-        const cumplidos = lista.every(id => {
-          const ramoReq = document.getElementById(id);
-          return ramoReq && ramoReq.classList.contains('completado');
-        });
+    elemento.classList.add('completado');
+    elemento.classList.remove('deshabilitado');
+    elemento.onclick = null;
 
-        if (cumplidos) {
-          ramo.classList.remove('deshabilitado');
-          ramo.onclick = function() { marcarRamo(this); };
-        }
-      });
+    guardarProgreso(id);
+    revisarDesbloqueos();
+  }
+
+  // Guarda el progreso en localStorage
+  function guardarProgreso(id) {
+    let completados = JSON.parse(localStorage.getItem(claveAlmacenamiento)) || [];
+    if (!completados.includes(id)) {
+      completados.push(id);
+      localStorage.setItem(claveAlmacenamiento, JSON.stringify(completados));
     }
+  }
+
+  // Carga el progreso guardado al cargar la página
+  function cargarProgreso() {
+    const completados = JSON.parse(localStorage.getItem(claveAlmacenamiento)) || [];
+    completados.forEach(id => {
+      const ramo = document.getElementById(id);
+      if (ramo) {
+        ramo.classList.add('completado');
+        ramo.classList.remove('deshabilitado');
+        ramo.onclick = null;
+      }
+    });
+  }
+
+  // Revisa qué ramos se pueden desbloquear
+  function revisarDesbloqueos() {
+    const ramosBloqueados = document.querySelectorAll('.ramo.deshabilitado');
+    ramosBloqueados.forEach(ramo => {
+      const requisitos = ramo.getAttribute('data-prerrequisitos');
+      if (!requisitos) return;
+
+      const lista = requisitos.split(',');
+      const cumplidos = lista.every(id => {
+        const ramoReq = document.getElementById(id);
+        return ramoReq && ramoReq.classList.contains('completado');
+      });
+
+      if (cumplidos) {
+        ramo.classList.remove('deshabilitado');
+        ramo.onclick = function () { marcarRamo(this); };
+      }
+    });
+  }
+
+  // Al cargar la página
+  window.onload = function () {
+    cargarProgreso();
+    revisarDesbloqueos();
+  }
   </script>
 </body>
 </html>
