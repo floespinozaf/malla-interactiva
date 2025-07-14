@@ -69,6 +69,7 @@
 </head>
 <body>
   <h1>Malla Interactiva de Obstetricia</h1>
+
   <div class="fila-semestres">
     <!-- SEMESTRE 1 -->
     <div class="semestre">
@@ -132,69 +133,63 @@
   </div>
 
   <script>
+    const claveAlmacenamiento = 'ramosCompletados';
 
-  const claveAlmacenamiento = 'ramosCompletados';
+    function marcarRamo(elemento) {
+      const id = elemento.id;
+      if (!id) return;
 
-  // Función que marca un ramo como completado
-  function marcarRamo(elemento) {
-    const id = elemento.id;
-    if (!id) return;
+      elemento.classList.add('completado');
+      elemento.classList.remove('deshabilitado');
+      elemento.onclick = null;
 
-    elemento.classList.add('completado');
-    elemento.classList.remove('deshabilitado');
-    elemento.onclick = null;
-
-    guardarProgreso(id);
-    revisarDesbloqueos();
-  }
-
-  // Guarda el progreso en localStorage
-  function guardarProgreso(id) {
-    let completados = JSON.parse(localStorage.getItem(claveAlmacenamiento)) || [];
-    if (!completados.includes(id)) {
-      completados.push(id);
-      localStorage.setItem(claveAlmacenamiento, JSON.stringify(completados));
+      guardarProgreso(id);
+      revisarDesbloqueos();
     }
-  }
 
-  // Carga el progreso guardado al cargar la página
-  function cargarProgreso() {
-    const completados = JSON.parse(localStorage.getItem(claveAlmacenamiento)) || [];
-    completados.forEach(id => {
-      const ramo = document.getElementById(id);
-      if (ramo) {
-        ramo.classList.add('completado');
-        ramo.classList.remove('deshabilitado');
-        ramo.onclick = null;
+    function guardarProgreso(id) {
+      let completados = JSON.parse(localStorage.getItem(claveAlmacenamiento)) || [];
+      if (!completados.includes(id)) {
+        completados.push(id);
+        localStorage.setItem(claveAlmacenamiento, JSON.stringify(completados));
       }
-    });
-  }
+    }
 
-  // Revisa qué ramos se pueden desbloquear
-  function revisarDesbloqueos() {
-    const ramosBloqueados = document.querySelectorAll('.ramo.deshabilitado');
-    ramosBloqueados.forEach(ramo => {
-      const requisitos = ramo.getAttribute('data-prerrequisitos');
-      if (!requisitos) return;
-
-      const lista = requisitos.split(',');
-      const cumplidos = lista.every(id => {
-        const ramoReq = document.getElementById(id);
-        return ramoReq && ramoReq.classList.contains('completado');
+    function cargarProgreso() {
+      const completados = JSON.parse(localStorage.getItem(claveAlmacenamiento)) || [];
+      completados.forEach(id => {
+        const ramo = document.getElementById(id);
+        if (ramo) {
+          ramo.classList.add('completado');
+          ramo.classList.remove('deshabilitado');
+          ramo.onclick = null;
+        }
       });
+    }
 
-      if (cumplidos) {
-        ramo.classList.remove('deshabilitado');
-        ramo.onclick = function () { marcarRamo(this); };
-      }
-    });
-  }
+    function revisarDesbloqueos() {
+      const ramosBloqueados = document.querySelectorAll('.ramo.deshabilitado');
+      ramosBloqueados.forEach(ramo => {
+        const requisitos = ramo.getAttribute('data-prerrequisitos');
+        if (!requisitos) return;
 
-  // Al cargar la página
-  window.onload = function () {
-    cargarProgreso();
-    revisarDesbloqueos();
-  }
+        const lista = requisitos.split(',');
+        const cumplidos = lista.every(id => {
+          const ramoReq = document.getElementById(id);
+          return ramoReq && ramoReq.classList.contains('completado');
+        });
+
+        if (cumplidos) {
+          ramo.classList.remove('deshabilitado');
+          ramo.onclick = function () { marcarRamo(this); };
+        }
+      });
+    }
+
+    window.onload = function () {
+      cargarProgreso();
+      revisarDesbloqueos();
+    }
   </script>
 </body>
 </html>
