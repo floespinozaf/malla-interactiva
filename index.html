@@ -3,29 +3,91 @@
 <head>
   <title>Malla Interactiva</title>
   <style>
-    .ramo {
-      border: 1px solid #ccc;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      margin: 20px;
+    }
+
+    .fila-semestres {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+    }
+
+    .semestre {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
       padding: 15px;
-      margin: 10px;
       border-radius: 8px;
-      background-color: #f9f9f9;
+      min-width: 200px;
+      box-shadow: 2px 2px 8px #ccc;
+    }
+
+    .semestre h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .ramo {
+      background-color: #d6eaf8;
+      border: 1px solid #2980b9;
+      border-radius: 6px;
+      padding: 10px;
+      margin: 10px 0;
       cursor: pointer;
+      color: #154360;
+      text-align: center;
+    }
+
+    .ramo:hover {
+      background-color: #aed6f1;
     }
   </style>
 </head>
 <body>
-  <h1>Malla de Obstetricia (Ejemplo)</h1>
+  <h1 style="text-align: center;">Malla Interactiva de Obstetricia</h1>
 
-  <div class="ramo" onclick="alert('Nombre: Anatomía\nCréditos: 6\nSemestre: 1')">
-    Anatomía
-  </div>
+  <div class="fila-semestres">
+    <!-- SEMESTRE 1 -->
+    <div class="semestre">
+      <h2>Semestre 1</h2>
+      <div class="ramo" onclick="alert('Nombre: Anatomía\nCréditos: 6\nPrerrequisitos: Ninguno')">Anatomía</div>
+      <div class="ramo" onclick="alert('Nombre: Biología\nCréditos: 5\nPrerrequisitos: Ninguno')">Biología</div>
+      <div class="ramo" onclick="alert('Nombre: Antropología\nCréditos: 4\nPrerrequisitos: Ninguno')">Antropología</div>
+    </div>
 
-  <div class="ramo" onclick="alert('Nombre: Biología\nCréditos: 5\nSemestre: 1')">
-    Biología
-  </div>
+    <!-- SEMESTRE 2 -->
+    <div class="semestre">
+      <h2>Semestre 2</h2>
+      <div class="ramo" onclick="alert('Nombre: Fisiología\nCréditos: 6\nPrerrequisitos: Anatomía')">Fisiología</div>
+      <div class="ramo" onclick="alert('Nombre: Psicología\nCréditos: 5\nPrerrequisitos: Ninguno')">Psicología</div>
+      <div class="ramo" onclick="alert('Nombre: Ética Profesional\nCréditos: 3\nPrerrequisitos: Ninguno')">Ética Profesional</div>
+    </div>
 
-  <div class="ramo" onclick="alert('Nombre: Antropología\nCréditos: 4\nSemestre: 1')">
-    Antropología
+    <!-- SEMESTRE 3 -->
+    <div class="semestre">
+      <h2>Semestre 3</h2>
+      <div class="ramo" onclick="alert('Nombre: Microbiología\nCréditos: 5\nPrerrequisitos: Biología')">Microbiología</div>
+      <div class="ramo" onclick="alert('Nombre: Farmacología\nCréditos: 5\nPrerrequisitos: Fisiología')">Farmacología</div>
+      <div class="ramo" onclick="alert('Nombre: Comunicación en Salud\nCréditos: 4\nPrerrequisitos: Psicología')">Comunicación en Salud</div>
+    </div>
+
+    <!-- SEMESTRE 4 -->
+    <div class="semestre">
+      <h2>Semestre 4</h2>
+      <div class="ramo" onclick="alert('Nombre: Obstetricia I\nCréditos: 6\nPrerrequisitos: Fisiología')">Obstetricia I</div>
+      <div class="ramo" onclick="alert('Nombre: Neonatología\nCréditos: 5\nPrerrequisitos: Microbiología')">Neonatología</div>
+      <div class="ramo" onclick="alert('Nombre: Salud Pública\nCréditos: 4\nPrerrequisitos: Ninguno')">Salud Pública</div>
+    </div>
+
+    <!-- SEMESTRE 5 -->
+    <div class="semestre">
+      <h2>Semestre 5</h2>
+      <div class="ramo" onclick="alert('Nombre: Obstetricia II\nCréditos: 6\nPrerrequisitos: Obstetricia I')">Obstetricia II</div>
+      <div class="ramo" onclick="alert('Nombre: Educación en Salud\nCréditos: 4\nPrerrequisitos: Comunicación en Salud')">Educación en Salud</div>
+      <div class="ramo" onclick="alert('Nombre: Investigación en Salud\nCréditos: 5\nPrerrequisitos: Ética Profesional')">Investigación en Salud</div>
+    </div>
   </div>
 </body>
 </html>
