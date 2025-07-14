@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Malla Interactiva</title>
+  <title>Malla Interactiva de Obstetricia</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -9,10 +9,16 @@
       margin: 20px;
     }
 
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
     .fila-semestres {
       display: flex;
       gap: 20px;
       overflow-x: auto;
+      padding: 20px 0;
     }
 
     .semestre {
@@ -22,11 +28,12 @@
       border-radius: 8px;
       min-width: 200px;
       box-shadow: 2px 2px 8px #ccc;
+      flex-shrink: 0;
     }
 
     .semestre h2 {
       text-align: center;
-      color: #2c3e50;
+      color: #1a5276;
     }
 
     .ramo {
@@ -38,56 +45,118 @@
       cursor: pointer;
       color: #154360;
       text-align: center;
+      transition: all 0.3s ease;
     }
 
     .ramo:hover {
       background-color: #aed6f1;
     }
+
+    .ramo.completado {
+      text-decoration: line-through;
+      background-color: #c8e6c9;
+      color: #1e4620;
+      cursor: default;
+    }
+
+    .ramo.deshabilitado {
+      background-color: #eeeeee;
+      color: #999;
+      border: 1px dashed #bbb;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
-  <h1 style="text-align: center;">Malla Interactiva de Obstetricia</h1>
+  <h1>Malla Interactiva de Obstetricia</h1>
 
   <div class="fila-semestres">
     <!-- SEMESTRE 1 -->
     <div class="semestre">
       <h2>Semestre 1</h2>
-      <div class="ramo" onclick="alert('Nombre: Anatomía\nCréditos: 6\nPrerrequisitos: Ninguno')">Anatomía</div>
-      <div class="ramo" onclick="alert('Nombre: Biología\nCréditos: 5\nPrerrequisitos: Ninguno')">Biología</div>
-      <div class="ramo" onclick="alert('Nombre: Antropología\nCréditos: 4\nPrerrequisitos: Ninguno')">Antropología</div>
+      <div class="ramo" id="anato" onclick="marcarRamo(this)">Anatomía</div>
+      <div class="ramo" id="bio" onclick="marcarRamo(this)">Biología</div>
+      <div class="ramo" id="antro" onclick="marcarRamo(this)">Antropología</div>
     </div>
 
     <!-- SEMESTRE 2 -->
     <div class="semestre">
       <h2>Semestre 2</h2>
-      <div class="ramo" onclick="alert('Nombre: Fisiología\nCréditos: 6\nPrerrequisitos: Anatomía')">Fisiología</div>
-      <div class="ramo" onclick="alert('Nombre: Psicología\nCréditos: 5\nPrerrequisitos: Ninguno')">Psicología</div>
-      <div class="ramo" onclick="alert('Nombre: Ética Profesional\nCréditos: 3\nPrerrequisitos: Ninguno')">Ética Profesional</div>
+      <div class="ramo deshabilitado" id="fisio" data-prerrequisitos="anato,bio" onclick="marcarRamo(this)">
+        Fisiología
+      </div>
+      <div class="ramo deshabilitado" id="psico" data-prerrequisitos="antro" onclick="marcarRamo(this)">
+        Psicología
+      </div>
+      <div class="ramo" id="etica" onclick="marcarRamo(this)">Ética Profesional</div>
     </div>
 
     <!-- SEMESTRE 3 -->
     <div class="semestre">
       <h2>Semestre 3</h2>
-      <div class="ramo" onclick="alert('Nombre: Microbiología\nCréditos: 5\nPrerrequisitos: Biología')">Microbiología</div>
-      <div class="ramo" onclick="alert('Nombre: Farmacología\nCréditos: 5\nPrerrequisitos: Fisiología')">Farmacología</div>
-      <div class="ramo" onclick="alert('Nombre: Comunicación en Salud\nCréditos: 4\nPrerrequisitos: Psicología')">Comunicación en Salud</div>
+      <div class="ramo deshabilitado" id="micro" data-prerrequisitos="bio" onclick="marcarRamo(this)">
+        Microbiología
+      </div>
+      <div class="ramo deshabilitado" id="farma" data-prerrequisitos="fisio" onclick="marcarRamo(this)">
+        Farmacología
+      </div>
+      <div class="ramo deshabilitado" id="comu" data-prerrequisitos="psico" onclick="marcarRamo(this)">
+        Comunicación en Salud
+      </div>
     </div>
 
     <!-- SEMESTRE 4 -->
     <div class="semestre">
       <h2>Semestre 4</h2>
-      <div class="ramo" onclick="alert('Nombre: Obstetricia I\nCréditos: 6\nPrerrequisitos: Fisiología')">Obstetricia I</div>
-      <div class="ramo" onclick="alert('Nombre: Neonatología\nCréditos: 5\nPrerrequisitos: Microbiología')">Neonatología</div>
-      <div class="ramo" onclick="alert('Nombre: Salud Pública\nCréditos: 4\nPrerrequisitos: Ninguno')">Salud Pública</div>
+      <div class="ramo deshabilitado" id="obs1" data-prerrequisitos="fisio" onclick="marcarRamo(this)">
+        Obstetricia I
+      </div>
+      <div class="ramo deshabilitado" id="neo" data-prerrequisitos="micro" onclick="marcarRamo(this)">
+        Neonatología
+      </div>
+      <div class="ramo" id="saludpub" onclick="marcarRamo(this)">Salud Pública</div>
     </div>
-o
+
     <!-- SEMESTRE 5 -->
     <div class="semestre">
       <h2>Semestre 5</h2>
-      <div class="ramo deshabilitado" id=fisio data-prerrequisito="bio,anato" onclick="marcarRamo(this)>
-      <div class="ramo" onclick="alert('Nombre: Educación en Salud\nCréditos: 4\nPrerrequisitos: Comunicación en Salud')">Educación en Salud</div>
-      <div class="ramo" onclick="alert('Nombre: Investigación en Salud\nCréditos: 5\nPrerrequisitos: Ética Profesional')">Investigación en Salud</div>
+      <div class="ramo deshabilitado" id="obs2" data-prerrequisitos="obs1" onclick="marcarRamo(this)">
+        Obstetricia II
+      </div>
+      <div class="ramo deshabilitado" id="edu" data-prerrequisitos="comu" onclick="marcarRamo(this)">
+        Educación en Salud
+      </div>
+      <div class="ramo deshabilitado" id="invest" data-prerrequisitos="etica" onclick="marcarRamo(this)">
+        Investigación en Salud
+      </div>
     </div>
   </div>
+
+  <script>
+    function marcarRamo(elemento) {
+      // Marcar el ramo como completado visualmente
+      elemento.classList.add('completado');
+      elemento.classList.remove('deshabilitado');
+      elemento.onclick = null; // desactiva el clic
+
+      // Revisa si desbloquea otros ramos
+      const ramosBloqueados = document.querySelectorAll('.ramo.deshabilitado');
+      ramosBloqueados.forEach(ramo => {
+        const requisitos = ramo.getAttribute('data-prerrequisitos');
+        if (!requisitos) return;
+
+        const lista = requisitos.split(',');
+        const cumplidos = lista.every(id => {
+          const ramoReq = document.getElementById(id);
+          return ramoReq && ramoReq.classList.contains('completado');
+        });
+
+        if (cumplidos) {
+          ramo.classList.remove('deshabilitado');
+          ramo.onclick = function() { marcarRamo(this); };
+        }
+      });
+    }
+  </script>
 </body>
 </html>
