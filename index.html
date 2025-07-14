@@ -26,7 +26,7 @@
       border: 1px solid #ddd;
       padding: 15px;
       border-radius: 8px;
-      min-width: 200px;
+      min-width: 220px;
       box-shadow: 2px 2px 8px #ccc;
       flex-shrink: 0;
     }
@@ -46,6 +46,7 @@
       color: #154360;
       text-align: center;
       transition: all 0.3s ease;
+      font-size: 14px;
     }
 
     .ramo:hover {
@@ -71,66 +72,135 @@
   <h1>Malla Interactiva de Obstetricia</h1>
 
   <div class="fila-semestres">
+
     <!-- SEMESTRE 1 -->
     <div class="semestre">
       <h2>Semestre 1</h2>
-      <div class="ramo" id="anato" onclick="marcarRamo(this)">Anatomía</div>
-      <div class="ramo" id="bio" onclick="marcarRamo(this)">Biología</div>
-      <div class="ramo" id="antro" onclick="marcarRamo(this)">Antropología</div>
+      <div class="ramo" id="s1r1" onclick="marcarRamo(this)">Ramo 1.1</div>
+      <div class="ramo" id="s1r2" onclick="marcarRamo(this)">Ramo 1.2</div>
+      <div class="ramo" id="s1r3" onclick="marcarRamo(this)">Ramo 1.3</div>
+      <div class="ramo" id="s1r4" onclick="marcarRamo(this)">Ramo 1.4</div>
+      <div class="ramo" id="s1r5" onclick="marcarRamo(this)">Ramo 1.5</div>
+      <div class="ramo" id="s1r6" onclick="marcarRamo(this)">Ramo 1.6</div>
+      <div class="ramo" id="s1r7" onclick="marcarRamo(this)">Ramo 1.7</div>
+      <div class="ramo" id="s1r8" onclick="marcarRamo(this)">Ramo 1.8</div>
     </div>
 
     <!-- SEMESTRE 2 -->
     <div class="semestre">
       <h2>Semestre 2</h2>
-      <div class="ramo deshabilitado" id="fisio" data-prerrequisitos="anato,bio" onclick="marcarRamo(this)">
-        Fisiología
-      </div>
-      <div class="ramo deshabilitado" id="psico" data-prerrequisitos="antro" onclick="marcarRamo(this)">
-        Psicología
-      </div>
-      <div class="ramo" id="etica" onclick="marcarRamo(this)">Ética Profesional</div>
+      <div class="ramo deshabilitado" id="s2r1" data-prerrequisitos="s1r1" onclick="marcarRamo(this)">Ramo 2.1</div>
+      <div class="ramo deshabilitado" id="s2r2" data-prerrequisitos="s1r2" onclick="marcarRamo(this)">Ramo 2.2</div>
+      <div class="ramo" id="s2r3" onclick="marcarRamo(this)">Ramo 2.3</div>
+      <div class="ramo" id="s2r4" onclick="marcarRamo(this)">Ramo 2.4</div>
+      <div class="ramo" id="s2r5" onclick="marcarRamo(this)">Ramo 2.5</div>
+      <div class="ramo" id="s2r6" onclick="marcarRamo(this)">Ramo 2.6</div>
+      <div class="ramo" id="s2r7" onclick="marcarRamo(this)">Ramo 2.7</div>
+      <div class="ramo" id="s2r8" onclick="marcarRamo(this)">Ramo 2.8</div>
     </div>
 
     <!-- SEMESTRE 3 -->
     <div class="semestre">
       <h2>Semestre 3</h2>
-      <div class="ramo deshabilitado" id="micro" data-prerrequisitos="bio" onclick="marcarRamo(this)">
-        Microbiología
-      </div>
-      <div class="ramo deshabilitado" id="farma" data-prerrequisitos="fisio" onclick="marcarRamo(this)">
-        Farmacología
-      </div>
-      <div class="ramo deshabilitado" id="comu" data-prerrequisitos="psico" onclick="marcarRamo(this)">
-        Comunicación en Salud
-      </div>
+      <div class="ramo deshabilitado" id="s3r1" data-prerrequisitos="s2r1" onclick="marcarRamo(this)">Ramo 3.1</div>
+      <div class="ramo deshabilitado" id="s3r2" data-prerrequisitos="s2r2" onclick="marcarRamo(this)">Ramo 3.2</div>
+      <div class="ramo" id="s3r3" onclick="marcarRamo(this)">Ramo 3.3</div>
+      <div class="ramo" id="s3r4" onclick="marcarRamo(this)">Ramo 3.4</div>
+      <div class="ramo" id="s3r5" onclick="marcarRamo(this)">Ramo 3.5</div>
+      <div class="ramo" id="s3r6" onclick="marcarRamo(this)">Ramo 3.6</div>
+      <div class="ramo" id="s3r7" onclick="marcarRamo(this)">Ramo 3.7</div>
+      <div class="ramo" id="s3r8" onclick="marcarRamo(this)">Ramo 3.8</div>
     </div>
-
     <!-- SEMESTRE 4 -->
     <div class="semestre">
       <h2>Semestre 4</h2>
-      <div class="ramo deshabilitado" id="obs1" data-prerrequisitos="fisio" onclick="marcarRamo(this)">
-        Obstetricia I
-      </div>
-      <div class="ramo deshabilitado" id="neo" data-prerrequisitos="micro" onclick="marcarRamo(this)">
-        Neonatología
-      </div>
-      <div class="ramo" id="saludpub" onclick="marcarRamo(this)">Salud Pública</div>
+      <div class="ramo deshabilitado" id="s4r1" data-prerrequisitos="s3r1" onclick="marcarRamo(this)">Ramo 4.1</div>
+      <div class="ramo deshabilitado" id="s4r2" data-prerrequisitos="s3r2" onclick="marcarRamo(this)">Ramo 4.2</div>
+      <div class="ramo" id="s4r3" onclick="marcarRamo(this)">Ramo 4.3</div>
+      <div class="ramo" id="s4r4" onclick="marcarRamo(this)">Ramo 4.4</div>
+      <div class="ramo" id="s4r5" onclick="marcarRamo(this)">Ramo 4.5</div>
+      <div class="ramo" id="s4r6" onclick="marcarRamo(this)">Ramo 4.6</div>
+      <div class="ramo" id="s4r7" onclick="marcarRamo(this)">Ramo 4.7</div>
+      <div class="ramo" id="s4r8" onclick="marcarRamo(this)">Ramo 4.8</div>
     </div>
 
     <!-- SEMESTRE 5 -->
     <div class="semestre">
       <h2>Semestre 5</h2>
-      <div class="ramo deshabilitado" id="obs2" data-prerrequisitos="obs1" onclick="marcarRamo(this)">
-        Obstetricia II
-      </div>
-      <div class="ramo deshabilitado" id="edu" data-prerrequisitos="comu" onclick="marcarRamo(this)">
-        Educación en Salud
-      </div>
-      <div class="ramo deshabilitado" id="invest" data-prerrequisitos="etica" onclick="marcarRamo(this)">
-        Investigación en Salud
-      </div>
+      <div class="ramo deshabilitado" id="s5r1" data-prerrequisitos="s4r1" onclick="marcarRamo(this)">Ramo 5.1</div>
+      <div class="ramo deshabilitado" id="s5r2" data-prerrequisitos="s4r2" onclick="marcarRamo(this)">Ramo 5.2</div>
+      <div class="ramo" id="s5r3" onclick="marcarRamo(this)">Ramo 5.3</div>
+      <div class="ramo" id="s5r4" onclick="marcarRamo(this)">Ramo 5.4</div>
+      <div class="ramo" id="s5r5" onclick="marcarRamo(this)">Ramo 5.5</div>
+      <div class="ramo" id="s5r6" onclick="marcarRamo(this)">Ramo 5.6</div>
+      <div class="ramo" id="s5r7" onclick="marcarRamo(this)">Ramo 5.7</div>
+      <div class="ramo" id="s5r8" onclick="marcarRamo(this)">Ramo 5.8</div>
     </div>
-  </div>
+
+    <!-- SEMESTRE 6 -->
+    <div class="semestre">
+      <h2>Semestre 6</h2>
+      <div class="ramo deshabilitado" id="s6r1" data-prerrequisitos="s5r1" onclick="marcarRamo(this)">Ramo 6.1</div>
+      <div class="ramo deshabilitado" id="s6r2" data-prerrequisitos="s5r2" onclick="marcarRamo(this)">Ramo 6.2</div>
+      <div class="ramo" id="s6r3" onclick="marcarRamo(this)">Ramo 6.3</div>
+      <div class="ramo" id="s6r4" onclick="marcarRamo(this)">Ramo 6.4</div>
+      <div class="ramo" id="s6r5" onclick="marcarRamo(this)">Ramo 6.5</div>
+      <div class="ramo" id="s6r6" onclick="marcarRamo(this)">Ramo 6.6</div>
+      <div class="ramo" id="s6r7" onclick="marcarRamo(this)">Ramo 6.7</div>
+      <div class="ramo" id="s6r8" onclick="marcarRamo(this)">Ramo 6.8</div>
+    </div>
+    <!-- SEMESTRE 7 -->
+    <div class="semestre">
+      <h2>Semestre 7</h2>
+      <div class="ramo deshabilitado" id="s7r1" data-prerrequisitos="s6r1" onclick="marcarRamo(this)">Ramo 7.1</div>
+      <div class="ramo deshabilitado" id="s7r2" data-prerrequisitos="s6r2" onclick="marcarRamo(this)">Ramo 7.2</div>
+      <div class="ramo" id="s7r3" onclick="marcarRamo(this)">Ramo 7.3</div>
+      <div class="ramo" id="s7r4" onclick="marcarRamo(this)">Ramo 7.4</div>
+      <div class="ramo" id="s7r5" onclick="marcarRamo(this)">Ramo 7.5</div>
+      <div class="ramo" id="s7r6" onclick="marcarRamo(this)">Ramo 7.6</div>
+      <div class="ramo" id="s7r7" onclick="marcarRamo(this)">Ramo 7.7</div>
+      <div class="ramo" id="s7r8" onclick="marcarRamo(this)">Ramo 7.8</div>
+    </div>
+
+    <!-- SEMESTRE 8 -->
+    <div class="semestre">
+      <h2>Semestre 8</h2>
+      <div class="ramo deshabilitado" id="s8r1" data-prerrequisitos="s7r1" onclick="marcarRamo(this)">Ramo 8.1</div>
+      <div class="ramo deshabilitado" id="s8r2" data-prerrequisitos="s7r2" onclick="marcarRamo(this)">Ramo 8.2</div>
+      <div class="ramo" id="s8r3" onclick="marcarRamo(this)">Ramo 8.3</div>
+      <div class="ramo" id="s8r4" onclick="marcarRamo(this)">Ramo 8.4</div>
+      <div class="ramo" id="s8r5" onclick="marcarRamo(this)">Ramo 8.5</div>
+      <div class="ramo" id="s8r6" onclick="marcarRamo(this)">Ramo 8.6</div>
+      <div class="ramo" id="s8r7" onclick="marcarRamo(this)">Ramo 8.7</div>
+      <div class="ramo" id="s8r8" onclick="marcarRamo(this)">Ramo 8.8</div>
+    </div>
+
+    <!-- SEMESTRE 9 -->
+    <div class="semestre">
+      <h2>Semestre 9</h2>
+      <div class="ramo deshabilitado" id="s9r1" data-prerrequisitos="s8r1" onclick="marcarRamo(this)">Ramo 9.1</div>
+      <div class="ramo deshabilitado" id="s9r2" data-prerrequisitos="s8r2" onclick="marcarRamo(this)">Ramo 9.2</div>
+      <div class="ramo" id="s9r3" onclick="marcarRamo(this)">Ramo 9.3</div>
+      <div class="ramo" id="s9r4" onclick="marcarRamo(this)">Ramo 9.4</div>
+      <div class="ramo" id="s9r5" onclick="marcarRamo(this)">Ramo 9.5</div>
+      <div class="ramo" id="s9r6" onclick="marcarRamo(this)">Ramo 9.6</div>
+      <div class="ramo" id="s9r7" onclick="marcarRamo(this)">Ramo 9.7</div>
+      <div class="ramo" id="s9r8" onclick="marcarRamo(this)">Ramo 9.8</div>
+    </div>
+    <!-- SEMESTRE 10 -->
+    <div class="semestre">
+      <h2>Semestre 10</h2>
+      <div class="ramo deshabilitado" id="s10r1" data-prerrequisitos="s9r1" onclick="marcarRamo(this)">Ramo 10.1</div>
+      <div class="ramo deshabilitado" id="s10r2" data-prerrequisitos="s9r2" onclick="marcarRamo(this)">Ramo 10.2</div>
+      <div class="ramo" id="s10r3" onclick="marcarRamo(this)">Ramo 10.3</div>
+      <div class="ramo" id="s10r4" onclick="marcarRamo(this)">Ramo 10.4</div>
+      <div class="ramo" id="s10r5" onclick="marcarRamo(this)">Ramo 10.5</div>
+      <div class="ramo" id="s10r6" onclick="marcarRamo(this)">Ramo 10.6</div>
+      <div class="ramo" id="s10r7" onclick="marcarRamo(this)">Ramo 10.7</div>
+      <div class="ramo" id="s10r8" onclick="marcarRamo(this)">Ramo 10.8</div>
+    </div>
+
+  </div> <!-- cierre de fila-semestres -->
 
   <script>
     const claveAlmacenamiento = 'ramosCompletados';
