@@ -138,11 +138,12 @@
   </div>
 
   <script>
-    <div style="text-align: center; margin-bottom: 20px;">
-  <button onclick="reiniciarMalla()" style="padding: 10px 20px; background-color: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer;">
-    Reiniciar malla
-  </button>
-</div>
+    function reiniciarMalla() {
+  // Borra datos guardados
+  localStorage.removeItem(claveAlmacenamiento);
+  // Recarga la página
+  location.reload();
+}
 
   const claveAlmacenamiento = 'ramosCompletados';
 
