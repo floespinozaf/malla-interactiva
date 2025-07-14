@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Malla Interactiva de Obstetricia</title>
+  <title>Malla Obstetricia utalca</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -100,7 +100,7 @@
     <div class="semestre">
       <h2>Semestre 3</h2>
       <div class="ramo" id="Auto" onclick="marcarRamo(this)">Autogestión del aprendizaje</div>
-      <div class="ramo deshabilitado" id="Fiziopato" data-prerrequisitos="Fisio" onclick="marcarRamo(this)">Fisiopatologia</div>
+      <div class="ramo deshabilitado" id="Fisiopato" data-prerrequisitos="Fisio" onclick="marcarRamo(this)">Fisiopatologia</div>
       <div class="ramo deshabilitado" id="Micro" data-prerrequisito="BBB" onclick="marcarRamo(this)">Microbiologia</div>
       <div class="ramo deshabilitado" id="Embrio" data-prerrequistito="Anato,BBB" onclick="marcarRamo(this)">Embriologia</div>
       <div class="ramo deshabilitado" id="FMQ" data-prerrequisito="Fisio,Anato" onclick="marcarRamo(this)">Fundamentos Medico Quirurgico</div>
@@ -111,14 +111,13 @@
     <!-- SEMESTRE 4 -->
     <div class="semestre">
       <h2>Semestre 4</h2>
-      <div class="ramo deshabilitado" id="s4r1" data-prerrequisitos="s3r1" onclick="marcarRamo(this)">Ramo 4.1</div>
-      <div class="ramo deshabilitado" id="s4r2" data-prerrequisitos="s3r2" onclick="marcarRamo(this)">Ramo 4.2</div>
-      <div class="ramo" id="s4r3" onclick="marcarRamo(this)">Ramo 4.3</div>
-      <div class="ramo" id="s4r4" onclick="marcarRamo(this)">Ramo 4.4</div>
-      <div class="ramo" id="s4r5" onclick="marcarRamo(this)">Ramo 4.5</div>
-      <div class="ramo" id="s4r6" onclick="marcarRamo(this)">Ramo 4.6</div>
-      <div class="ramo" id="s4r7" onclick="marcarRamo(this)">Ramo 4.7</div>
-      <div class="ramo" id="s4r8" onclick="marcarRamo(this)">Ramo 4.8</div>
+      <div class="ramo deshabilitado" id="CMQ" data-prerrequisitos="FMQ" onclick="marcarRamo(this)">Clinica medico quirurgica</div>
+      <div class="ramo deshabilitado" id="SFC" data-prerrequisitos="Epide,SP,Intro" onclick="marcarRamo(this)">Salud familiar y comunitaria</div>
+      <div class="ramo deshabilitado" id="Farmaco" data-prerrequisitos="Fisiopato,Quim" onclick="marcarRamo(this)">Farmacologia</div>
+      <div class="ramo deshabilitado" id="TEDHS" data-prerrequisitos="Auto" onclick="marcarRamo(this)"> Trabajo en equipo y desarrollo de habilidades sociales</div>
+      <div class="ramo deshabilitado" id="Obste I" data-prerrequisitos="Micro,Fisiopato,Anato" onclick="marcarRamo(this)">Obstetricia I</div>
+      <div class="ramo deshabilitado" id="Neo I" data-prerrequisitos="Embrio,Fisiopato" onclick="marcarRamo(this)">Neonatologia I</div>
+      <div class="ramo deshabilitado" id="IE IV" data-prerrequisitos="IE III" onclick="marcarRamo(this)">Idioma extranjero IV</div>
     </div>
 
     <!-- SEMESTRE 5 -->
