@@ -69,7 +69,7 @@
   </style>
 </head>
 <body>
-  <h1>Malla Interactiva de Obstetricia</h1>
+  <h1>Malla Obstetricia Utalca</h1>
 
   <div class="fila-semestres">
 
@@ -93,7 +93,7 @@
       <div class="ramo" id="Fisio" onclick="marcarRamo(this)">Fisiologia</div>
       <div class="ramo" id="bio" onclick="marcarRamo(this)">Bioestadistica descriptiva</div>
       <div class="ramo deshabilitado" id="Psico" data-prerrequisitos="Antro" onclick="marcarRamo(this)">Psicologia evolutiva</div>
-      <div class="ramo deshabilitado" id="IEII" data-prerrequisito="IE" onclick="marcarRamo(this)">Idioma extranjero II</div>
+      <div class="ramo deshabilitado" id="IEII" data-prerrequisitos="IE" onclick="marcarRamo(this)">Idioma extranjero II</div>
     </div>
 
     <!-- SEMESTRE 3 -->
@@ -117,45 +117,39 @@
       <div class="ramo deshabilitado" id="TEDHS" data-prerrequisitos="Auto" onclick="marcarRamo(this)"> Trabajo en equipo y desarrollo de habilidades sociales</div>
       <div class="ramo deshabilitado" id="ObsteI" data-prerrequisitos="Micro,Fisiopato,Anato" onclick="marcarRamo(this)">Obstetricia I</div>
       <div class="ramo deshabilitado" id="NeoI" data-prerrequisitos="Embrio,Fisiopato" onclick="marcarRamo(this)">Neonatologia I</div>
-      <div class="ramo deshabilitado" id="IE IV" data-prerrequisitos="IE III" onclick="marcarRamo(this)">Idioma extranjero IV</div>
+      <div class="ramo deshabilitado" id="IEIV" data-prerrequisitos="IEIII" onclick="marcarRamo(this)">Idioma extranjero IV</div>
     </div>
 
     <!-- SEMESTRE 5 -->
     <div class="semestre">
       <h2>Semestre 5</h2>
-      <div class="ramo deshabilitado" id="s5r1" data-prerrequisitos="s4r1" onclick="marcarRamo(this)">Ramo 5.1</div>
-      <div class="ramo deshabilitado" id="s5r2" data-prerrequisitos="s4r2" onclick="marcarRamo(this)">Ramo 5.2</div>
-      <div class="ramo" id="s5r3" onclick="marcarRamo(this)">Ramo 5.3</div>
-      <div class="ramo" id="s5r4" onclick="marcarRamo(this)">Ramo 5.4</div>
-      <div class="ramo" id="s5r5" onclick="marcarRamo(this)">Ramo 5.5</div>
-      <div class="ramo" id="s5r6" onclick="marcarRamo(this)">Ramo 5.6</div>
-      <div class="ramo" id="s5r7" onclick="marcarRamo(this)">Ramo 5.7</div>
-      <div class="ramo" id="s5r8" onclick="marcarRamo(this)">Ramo 5.8</div>
+      <div class="ramo deshabilitado" id="GineI" data-prerrequisitos="Fisio,Anato" onclick="marcarRamo(this)">Ginecologia I</div>
+      <div class="ramo deshabilitado" id="NeoII" data-prerrequisitos="NeoI" onclick="marcarRamo(this)">Neonatologia II</div>
+      <div class="ramo deshabilitado" id="ObsteII" data-prerrequisitos="ObsteI" onclick="marcarRamo(this)">Obstetricia II</div>
+      <div class="ramo deshabilitado" id="ICI" data-prerrequisitos="NeoI,ObsteI,CMQ" onclick="marcarRamo(this)">Integración clinica I</div>
+      <div class="ramo deshabilitado" id="CCS" data-prerrequisitos="CoeII" onclick="marcarRamo(this)">Comprensión de contextos sociales</div>
+      <div class="ramo deshabilitado" id="MDI" data-prerrequisitos="bio" onclick="marcarRamo(this)">Metodologia de la investigación</div>
+      <div class="ramo deshabilitado" id="ML" data-prerrequisitos="Intro" onclick="marcarRamo(this)">Medicina legal</div>
+      <div class="ramo deshabilitado" id="bioetica" data-prerrequisitos="NeoI,ObsteI" onclick="marcarRamo(this)">Bioetica</div>
+      <div class="ramo deshabilitado" id="IEV" data-prerrequisitos="IEIV" onclick="marcarRamo(this)">Idioma extranjero V</div>
     </div>
 
     <!-- SEMESTRE 6 -->
     <div class="semestre">
       <h2>Semestre 6</h2>
-      <div class="ramo deshabilitado" id="s6r1" data-prerrequisitos="s5r1" onclick="marcarRamo(this)">Ramo 6.1</div>
-      <div class="ramo deshabilitado" id="s6r2" data-prerrequisitos="s5r2" onclick="marcarRamo(this)">Ramo 6.2</div>
-      <div class="ramo" id="s6r3" onclick="marcarRamo(this)">Ramo 6.3</div>
-      <div class="ramo" id="s6r4" onclick="marcarRamo(this)">Ramo 6.4</div>
-      <div class="ramo" id="s6r5" onclick="marcarRamo(this)">Ramo 6.5</div>
-      <div class="ramo" id="s6r6" onclick="marcarRamo(this)">Ramo 6.6</div>
-      <div class="ramo" id="s6r7" onclick="marcarRamo(this)">Ramo 6.7</div>
-      <div class="ramo" id="s6r8" onclick="marcarRamo(this)">Ramo 6.8</div>
+      <div class="ramo deshabilitado" id="GS" data-prerrequisitos="SP" onclick="marcarRamo(this)">Gestión en salud</div>
+      <div class="ramo deshabilitado" id="MI" data-prerrequisitos="NeoI,ObsteI,Fisio,Anato" onclick="marcarRamo(this)">Modulo Integrador</div>
+      <div class="ramo deshabilitado" id="BioII" data-prerrequisitos="bio" onclick="marcarRamo(this)">Bioestadisticas inferencial</div>
+      <div class="ramo deshabilitado" id="CCC" data-prerrequisitos="CCS" onclick="marcarRamo(this)">Comprensión de contextos culturales</div>
+      <div class="ramo deshabilitado" id="IEVI" data-prerrequisitos="IEV" onclick="marcarRamo(this)">Idioma extranjero VI</div>
     </div>
+    
     <!-- SEMESTRE 7 -->
     <div class="semestre">
       <h2>Semestre 7</h2>
-      <div class="ramo deshabilitado" id="s7r1" data-prerrequisitos="s6r1" onclick="marcarRamo(this)">Ramo 7.1</div>
-      <div class="ramo deshabilitado" id="s7r2" data-prerrequisitos="s6r2" onclick="marcarRamo(this)">Ramo 7.2</div>
-      <div class="ramo" id="s7r3" onclick="marcarRamo(this)">Ramo 7.3</div>
-      <div class="ramo" id="s7r4" onclick="marcarRamo(this)">Ramo 7.4</div>
-      <div class="ramo" id="s7r5" onclick="marcarRamo(this)">Ramo 7.5</div>
-      <div class="ramo" id="s7r6" onclick="marcarRamo(this)">Ramo 7.6</div>
-      <div class="ramo" id="s7r7" onclick="marcarRamo(this)">Ramo 7.7</div>
-      <div class="ramo" id="s7r8" onclick="marcarRamo(this)">Ramo 7.8</div>
+      <div class="ramo deshabilitado" id="IAf" data-prerrequisitos="BioII,MDI" onclick="marcarRamo(this)">Investigación aplicada a la profesión</div>
+      <div class="ramo deshabilitado" id="NeoIII" data-prerrequisitos="NeoII,Farmaco" onclick="marcarRamo(this)">Neonatologia III</div>
+      <div class="ramo deshabilitado" id="ICII" data-prerrequisitos="bioetica,ML,ICI,ObsteII" onclick="marcarRamo(this)">Integración clinica II</div>
     </div>
 
     <!-- SEMESTRE 8 -->
